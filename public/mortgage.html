@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ипотека | EcoLive</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo">
+                    <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+                </a>
+
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/catalog" class="nav__link">Каталог</a></li>
+                        <li class="nav__item"><a href="/region" class="nav__link">Район</a></li>
+                        <li class="nav__item"><a href="/mortgage" class="nav__link active">Ипотека</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__contacts">
+                    <a href="tel:+78005553535" class="phone">8 800 555-35-35</a>
+                    <button class="btn btn--small">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер ипотеки -->
+    <section class="hero mortgage-hero">
+        <div class="container">
+            <h1 class="hero__title">Ипотека с первоначальным взносом от 15%</h1>
+            <p class="hero__subtitle">Ставка от 3,5% годовых. Программы от ведущих банков. Поможем оформить быстро и без
+                лишних хлопот.</p>
+            <button class="btn btn--primary"
+                onclick="document.getElementById('calc-section').scrollIntoView({ behavior: 'smooth' });">Рассчитать
+                ипотеку</button>
+        </div>
+    </section>
+
+    <!-- Условия ипотеки -->
+    <section class="section mortgage-info">
+        <div class="container">
+            <h2 class="section-title section-title--left">Условия ипотеки</h2>
+            <div class="advantages__grid">
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">📉</div>
+                    <h3 class="advantage-card__title">Низкие ставки</h3>
+                    <p class="advantage-card__text">Ставки от 3,5% в зависимости от программы и банка-партнёра.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">🛡️</div>
+                    <h3 class="advantage-card__title">Полное сопровождение</h3>
+                    <p class="advantage-card__text">Оформление документов, консультации, помощь в одобрении кредита.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">👨‍👩‍👦</div>
+                    <h3 class="advantage-card__title">Семейная ипотека</h3>
+                    <p class="advantage-card__text">Льготные условия для семей с детьми и молодых специалистов.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">🏛️</div>
+                    <h3 class="advantage-card__title">Господдержка</h3>
+                    <p class="advantage-card__text">Возможность участия в государственных программах поддержки.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Калькулятор -->
+    <section id="calc-section" class="section mortgage-calc">
+        <div class="container">
+            <h2 class="section-title section-title--left">Рассчитайте свою ипотеку</h2>
+            <form id="mortgage-form" class="cta__form" style="max-width: 600px; margin: 0 auto;">
+                <input type="number" class="form-input" placeholder="Стоимость квартиры, ₽" id="price" required>
+                <input type="number" class="form-input" placeholder="Первоначальный взнос, ₽" id="downPayment" required>
+                <input type="number" class="form-input" placeholder="Срок кредита (лет)" id="term" required>
+                <input type="number" class="form-input" placeholder="Процентная ставка (%)" id="rate" value="3.5"
+                    required>
+
+                <button type="submit" class="btn btn--primary">Рассчитать платеж</button>
+            </form>
+
+            <div id="result" class="mortgage-result" style="margin-top: 30px; font-size: 18px; text-align: center;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Заявка на ипотеку -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__inner">
+                <div class="cta__content">
+                    <h2 class="cta__title">Оставьте заявку на ипотеку</h2>
+                    <p class="cta__text">Менеджер свяжется с вами и поможет выбрать подходящую программу</p>
+                </div>
+                <form class="cta__form" id="mortgage-application">
+                    <input type="text" placeholder="Ваше имя" class="form-input" required>
+                    <input type="tel" placeholder="Телефон" class="form-input" required>
+                    <button type="submit" class="btn btn--primary">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__col">
+                    <a href="/" class="logo">
+                        <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+                    </a>
+                    <p class="footer__text">Экологичное жильё для комфортной жизни</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <a href="tel:+78005553535" class="footer__link">8 800 555-35-35</a>
+                    <a href="mailto:info@ecolive.ru" class="footer__link">info@ecolive.ru</a>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Адрес</h3>
+                    <p class="footer__text">г. Москва, ул. Пушкинская, д. 52</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 EcoLive. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS — Ипотечный калькулятор -->
+    <script>
+        document.getElementById("mortgage-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const price = parseFloat(document.getElementById("price").value);
+            const downPayment = parseFloat(document.getElementById("downPayment").value);
+            const term = parseInt(document.getElementById("term").value);
+            const rate = parseFloat(document.getElementById("rate").value);
+
+            if (!price || !downPayment || !term || !rate) {
+                alert("Пожалуйста, заполните все поля.");
+                return;
+            }
+
+            const loanAmount = price - downPayment;
+            const monthlyRate = (rate / 100) / 12;
+            const months = term * 12;
+
+            const payment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, months)) /
+                (Math.pow(1 + monthlyRate, months) - 1);
+
+            document.getElementById("result").innerHTML =
+                `Ежемесячный платёж: <strong>${payment.toFixed(0)} ₽</strong>`;
+        });
+    </script>
+
+</body>
+
+</html>
