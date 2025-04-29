@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Каталог объектов | EcoLive</title>
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo">
+                    <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+                </a>
+
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="/region" class="nav__link">Район</a></li>
+                        <li class="nav__item"><a href="/mortgage" class="nav__link">Ипотека</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__contacts">
+                    <a href="tel:+78005553535" class="phone">8 800 555-35-35</a>
+                    <button class="btn btn--small">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="catalog-page">
+
+        <div class="container">
+            <h1>Каталог новостроек</h1>
+
+            <section class="filters-section" id="filters">
+                <div class="container">
+                    <div class="filters-header">
+                        <h2>Фильтры каталога</h2>
+                        <button class="btn-reset-filters">Сбросить</button>
+                    </div>
+
+                    <p class="filters-description">Выберите категорию или выполните поиск по названию объекта</p>
+
+                    <div class="catalog-filters-wrapper">
+                        <select class="filter-select" aria-label="Фильтр по категории">
+                            <option value="all">Все объекты</option>
+                            <option value="green">🌿 Зелёные зоны</option>
+                            <option value="eco">♻️ Эко-технологии</option>
+                            <option value="air">🎈 Свежий воздух</option>
+                            <option value="air">🎈 Свежий воздух</option>
+                            <option value="air">🎈 Свежий воздух</option>
+
+                        </select>
+
+                        <input type="text" placeholder="Поиск..." class="search-input" aria-label="Поиск по каталогу">
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="catalog-grid" id="catalog-grid"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__col">
+                    <a href="/" class="logo">
+                        <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+                    </a>
+                    <p class="footer__text">Экологичное жильё для комфортной жизни</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <a href="tel:+78005553535" class="footer__link">8 800 555-35-35</a>
+                    <a href="mailto:info@ecoliving.ru" class="footer__link">info@ecolive.ru</a>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Адрес</h3>
+                    <p class="footer__text">г. Москва, ул. Пушкинская, д. 52</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 EcoLive. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Тот же футер -->
+    <script src="/js/catalog.js"></script>
+</body>
+
+</html>
