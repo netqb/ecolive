@@ -22,15 +22,17 @@
 
                 <nav class="nav">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="/catalog" class="nav__link">Каталог</a></li>
-                        <li class="nav__item"><a href="/region" class="nav__link">Район</a></li>
-                        <li class="nav__item"><a href="/mortgage" class="nav__link">Ипотека</a></li>
+                        <li class="nav__item"><a href="/" class="nav__link">🏠 Главная</a></li>
+                        <li class="nav__item"><a href="/catalog" class="nav__link">📚 Каталог</a></li>
+                        <li class="nav__item"><a href="/region" class="nav__link">👮 Район</a></li>
+                        <li class="nav__item"><a href="/mortgage" class="nav__link">💸 Ипотека</a></li>
                     </ul>
                 </nav>
 
                 <div class="header__contacts">
                     <a href="tel:+78005553535" class="phone">8 800 555-35-35</a>
-                    <button class="btn btn--small">Заказать звонок</button>
+                    <button class="btn btn--small" onclick="showModal('callbackModal')">Заказать звонок</button>
+
                 </div>
             </div>
         </div>
@@ -42,7 +44,7 @@
             <div class="hero__content">
                 <h1 class="hero__title">Экологичное жильё в гармонии с природой</h1>
                 <p class="hero__subtitle">Современные новостройки с зелёными зонами и эко-технологиями</p>
-                <button class="btn btn--primary">Выбрать квартиру</button>
+                <a href="/region" class="btn btn--primary">Выбрать квартиру</a>
             </div>
         </div>
     </section>
@@ -81,66 +83,38 @@
         <div class="container">
             <h2 class="section-title">Наши объекты</h2>
             <div class="projects-grid">
-                <!-- Карточки будут добавляться через JS -->
             </div>
         </div>
     </section>
 
-    <!-- Форма обратной связи -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta__inner">
-                <div class="cta__content">
-                    <h2 class="cta__title">Остались вопросы?</h2>
-                    <p class="cta__text">Оставьте заявку и наш менеджер свяжется с вами в течение 15 минут</p>
-                </div>
-                <form class="cta__form" id="cta-form">
-                    <input type="text" placeholder="Ваше имя" class="form-input" required>
-                    <input type="tel" placeholder="Телефон" class="form-input" required>
-                    <button type="submit" class="btn btn--primary">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </section>
+
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-    <div id="map-container">
-        <div id="projects-map"></div>
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Расположение наших объектов</h2>
+            <div id="projects-map" class="map"></div>
+        </div>
+    </section>
+
+
+    <!-- Модальное окно звонка -->
+    <div class="modal" id="callbackModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <span class="modal__close" onclick="closeModal()">&times;</span>
+            <h2>Заказать звонок</h2>
+            <form id="callbackForm">
+                <input type="text" placeholder="Ваше имя" class="form-input" required />
+                <input type="tel" placeholder="Телефон" class="form-input" required />
+                <button type="submit" class="btn btn--primary">Отправить</button>
+                <p class="modal__info">Мы перезвоним вам в течение 15 минут</p>
+            </form>
+        </div>
     </div>
 
-    <script>
-        const map = L.map('projects-map').setView([55.751244, 37.618423], 12);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
-        const projects = [
-            {
-                title: 'ЖК «Зелёный Берег»',
-                description: 'Современный комплекс у реки с собственным парком',
-                price: 'от 5,2 млн ₽',
-                image: '/images/green-shore.jpg',
-                coords: [55.751244, 37.618423], // координаты для карты
-                tags: ['green']
-            },
-            {
-                title: 'ЖК «Эко Хаус»',
-                description: 'Энергоэффективные дома с солнечными панелями',
-                price: 'от 7,8 млн ₽',
-                image: '/images/eco-house.jpg',
-                coords: [55.761244, 37.628423],
-                tags: ['eco']
-            },
-            // Добавь ещё объектов по аналогии
-        ]; projects.forEach(project => {
-            L.marker(project.coords).addTo(map)
-                .bindPopup(`<b>${project.title}</b><br>${project.price}`);
-        });
-    </script>
-    <!-- Подвал -->
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
@@ -166,6 +140,11 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">
+            <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+        </div>
+    </div>
 </body>
 
 </html>

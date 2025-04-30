@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Информация о ЖК | EcoLive</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo">
+                    <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/" class="nav__link">🏠 Главная</a></li>
+                        <li class="nav__item"><a href="/catalog" class="nav__link">📚 Каталог</a></li>
+                        <li class="nav__item"><a href="/region" class="nav__link">👮 Район</a></li>
+                        <li class="nav__item"><a href="/mortgage" class="nav__link">💸 Ипотека</a></li>
+                    </ul>
+                </nav>
+                <div class="header__contacts">
+                    <a href="tel:+78005553535" class="phone">8 800 555-35-35</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="object-page">
+        <div class="container">
+            <h1 class="section-title" id="project-title"></h1>
+
+            <div class="project-details">
+
+                <img src="" alt="" id="project-image" class="project-image-large" />
+                <div class="project-info">
+                    <p id="project-description"></p>
+                    <p><strong>Цена:</strong> <span id="project-price"></span></p>
+                    <p><strong>Особенности:</strong></p>
+                    <div id="project-tags"></div>
+                    <p><strong>Дополнительно:</strong> <span id="project-details-text"></span></p>
+                </div>
+                <a href="/catalog" class="btn btn--secondary btn--small btn--back">
+                    ← Вернуться в каталог
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__col">
+                    <a href="/" class="logo">
+                        <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+                    </a>
+                    <p class="footer__text">Экологичное жильё для комфортной жизни</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <a href="tel:+78005553535" class="footer__link">8 800 555-35-35</a>
+                    <a href="mailto:info@ecolive.ru" class="footer__link">info@ecolive.ru</a>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Адрес</h3>
+                    <p class="footer__text">г. Москва, ул. Пушкинская, д. 52</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 EcoLive. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">
+            <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+        </div>
+    </div>
+    <script src="js/object.js"></script>
+</body>
+
+</html>

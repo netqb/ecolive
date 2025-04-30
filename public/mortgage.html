@@ -22,15 +22,15 @@
 
                 <nav class="nav">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="/catalog" class="nav__link">Каталог</a></li>
-                        <li class="nav__item"><a href="/region" class="nav__link">Район</a></li>
-                        <li class="nav__item"><a href="/mortgage" class="nav__link active">Ипотека</a></li>
+                        <li class="nav__item"><a href="/" class="nav__link">🏠 Главная</a></li>
+                        <li class="nav__item"><a href="/catalog" class="nav__link">📚 Каталог</a></li>
+                        <li class="nav__item"><a href="/region" class="nav__link">👮 Район</a></li>
+                        <li class="nav__item"><a href="/mortgage" class="nav__link">💸 Ипотека</a></li>
                     </ul>
                 </nav>
 
                 <div class="header__contacts">
                     <a href="tel:+78005553535" class="phone">8 800 555-35-35</a>
-                    <button class="btn btn--small">Заказать звонок</button>
                 </div>
             </div>
         </div>
@@ -96,22 +96,7 @@
         </div>
     </section>
 
-    <!-- Заявка на ипотеку -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta__inner">
-                <div class="cta__content">
-                    <h2 class="cta__title">Оставьте заявку на ипотеку</h2>
-                    <p class="cta__text">Менеджер свяжется с вами и поможет выбрать подходящую программу</p>
-                </div>
-                <form class="cta__form" id="mortgage-application">
-                    <input type="text" placeholder="Ваше имя" class="form-input" required>
-                    <input type="tel" placeholder="Телефон" class="form-input" required>
-                    <button type="submit" class="btn btn--primary">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Подвал -->
     <footer class="footer">
@@ -139,32 +124,12 @@
         </div>
     </footer>
 
-    <!-- JS — Ипотечный калькулятор -->
-    <script>
-        document.getElementById("mortgage-form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const price = parseFloat(document.getElementById("price").value);
-            const downPayment = parseFloat(document.getElementById("downPayment").value);
-            const term = parseInt(document.getElementById("term").value);
-            const rate = parseFloat(document.getElementById("rate").value);
-
-            if (!price || !downPayment || !term || !rate) {
-                alert("Пожалуйста, заполните все поля.");
-                return;
-            }
-
-            const loanAmount = price - downPayment;
-            const monthlyRate = (rate / 100) / 12;
-            const months = term * 12;
-
-            const payment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, months)) /
-                (Math.pow(1 + monthlyRate, months) - 1);
-
-            document.getElementById("result").innerHTML =
-                `Ежемесячный платёж: <strong>${payment.toFixed(0)} ₽</strong>`;
-        });
-    </script>
-
+    <script src="/js/mortgage.js"></script>
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">
+            <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+        </div>
+    </div>
 </body>
 
 </html>

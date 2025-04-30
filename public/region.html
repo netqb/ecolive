@@ -23,15 +23,15 @@
 
                 <nav class="nav">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="/catalog" class="nav__link">Каталог</a></li>
-                        <li class="nav__item"><a href="/region" class="nav__link">Район</a></li>
-                        <li class="nav__item"><a href="/mortgage" class="nav__link">Ипотека</a></li>
+                        <li class="nav__item"><a href="/" class="nav__link">🏠 Главная</a></li>
+                        <li class="nav__item"><a href="/catalog" class="nav__link">📚 Каталог</a></li>
+                        <li class="nav__item"><a href="/region" class="nav__link">👮 Район</a></li>
+                        <li class="nav__item"><a href="/mortgage" class="nav__link">💸 Ипотека</a></li>
                     </ul>
                 </nav>
 
                 <div class="header__contacts">
                     <a href="tel:+78005553535" class="phone">8 800 555-35-35</a>
-                    <button class="btn btn--small">Заказать звонок</button>
                 </div>
             </div>
         </div>
@@ -43,7 +43,6 @@
             <h1 class="hero__title">Живи ближе к природе</h1>
             <p class="hero__subtitle">Район «Лесные Просторы» — экологически чистый микрорайон с парками, прудами и
                 свежим воздухом.</p>
-            <button class="btn btn--primary">Посмотреть квартиры</button>
         </div>
     </section>
 
@@ -93,7 +92,6 @@
             <h2 class="section-title">Квартиры в районе «Лесные Просторы»</h2>
 
             <div class="apartments-grid">
-                <!-- Карточка квартиры -->
                 <div class="apartment-card">
                     <div class="project-image-container">
                         <img src="images/apartment.jpg" alt="Квартира 1" class="project-image">
@@ -106,11 +104,10 @@
                             <span>42 м²</span> | <span>Этаж 7</span>
                         </div>
                         <div class="project-price">от 5,9 млн ₽</div>
-                        <a href="#" class="btn btn--secondary btn-more">Подробнее</a>
+                        <a href="" class="btn btn--secondary btn-more">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Ещё квартира -->
                 <div class="apartment-card">
                     <div class="project-image-container">
                         <img src="images/apartment2.jpg" alt="Квартира 2" class="project-image">
@@ -122,11 +119,10 @@
                             <span>68 м²</span> | <span>Этаж 10</span>
                         </div>
                         <div class="project-price">от 8,3 млн ₽</div>
-                        <a href="#" class="btn btn--secondary btn-more">Подробнее</a>
+                        <a href="" class="btn btn--secondary btn-more">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Третья квартира -->
                 <div class="apartment-card">
                     <div class="project-image-container">
                         <img src="images/apartment3.jpg" alt="Квартира 3" class="project-image">
@@ -138,27 +134,9 @@
                             <span>89 м²</span> | <span>Этаж 5</span>
                         </div>
                         <div class="project-price">от 11,5 млн ₽</div>
-                        <a href="#" class="btn btn--secondary btn-more">Подробнее</a>
+                        <a href="" class="btn btn--secondary btn-more">Подробнее</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Форма обратной связи -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta__inner">
-                <div class="cta__content">
-                    <h2 class="cta__title">Остались вопросы?</h2>
-                    <p class="cta__text">Оставьте заявку и наш менеджер свяжется с вами в течение 15 минут</p>
-                </div>
-                <form class="cta__form" id="cta-form">
-                    <input type="text" placeholder="Ваше имя" class="form-input" required>
-                    <input type="tel" placeholder="Телефон" class="form-input" required>
-                    <button type="submit" class="btn btn--primary">Отправить</button>
-                </form>
             </div>
         </div>
     </section>
@@ -189,10 +167,14 @@
         </div>
     </footer>
 
-    <!-- Скрипты -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="/js/region.js"></script>
 
-    <script src="js/main.js"></script>
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">
+            <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
+        </div>
+    </div>
 </body>
 
 </html>
