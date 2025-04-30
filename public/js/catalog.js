@@ -113,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     };
 
-    // Фильтрация по категории
     const filterSelect = document.querySelector('.filter-select');
     if (filterSelect) {
         filterSelect.addEventListener('change', (e) => {
@@ -125,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Поиск по названию или описанию
     const searchInput = document.querySelector('.search-input');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
@@ -141,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects(projects);
 });
 
-// Анимация появления блока с фильтрами
 const filtersSection = document.getElementById('filters');
 
 const observer = new IntersectionObserver(entries => {
@@ -157,10 +154,44 @@ if (filtersSection) {
     observer.observe(filtersSection);
 }
 
-// Сброс фильтров
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav__link");
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href").replace(/\/$/, "");
+        const path = currentPath.replace(/\/$/, "");
+
+        if (path === href) {
+            link.classList.add("active");
+        }
+    });
+});
+
 document.querySelector('.btn-reset-filters')?.addEventListener('click', () => {
     document.querySelector('.filter-select').value = 'all';
     document.querySelector('.search-input').value = '';
     const event = new Event('input', { bubbles: true });
     document.querySelector('.search-input').dispatchEvent(event);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const preloader = document.getElementById("preloader");
+
+    setTimeout(() => {
+        preloader.classList.add("preloader-hidden");
+    }, 500);
+
+    document.querySelectorAll('a[href]').forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (!this.href.startsWith(location.origin)) return;
+
+            e.preventDefault();
+            preloader.classList.remove("preloader-hidden");
+
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 800);
+        });
+    });
 });

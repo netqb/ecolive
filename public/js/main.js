@@ -82,3 +82,112 @@ function renderProjects(projects) {
 }
 
 
+function showModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add("show");
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    const modal = document.getElementById("callbackModal");
+    modal.classList.remove("show");
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300);
+}
+
+document.querySelector('.modal__overlay')?.addEventListener('click', closeModal);
+
+document.getElementById("callbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    alert("Спасибо! Мы скоро вам перезвоним.");
+
+    document.querySelector("#callbackForm input[type='text']").value = "";
+    document.querySelector("#callbackForm input[type='tel']").value = "";
+
+    closeModal();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const preloader = document.getElementById("preloader");
+
+    setTimeout(() => {
+        preloader.classList.add("preloader-hidden");
+    }, 500);
+
+    document.querySelectorAll('a[href]').forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (!this.href.startsWith(location.origin)) return;
+
+            e.preventDefault();
+            preloader.classList.remove("preloader-hidden");
+
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 800);
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav__link");
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href").replace(/\/$/, "");
+        const path = currentPath.replace(/\/$/, "");
+
+        if (path === href) {
+            link.classList.add("active");
+        }
+    });
+});
+
+const map = L.map('projects-map').setView([55.751244, 37.618423], 12);
+
+L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenTopoMap contributors',
+    maxZoom: 17,
+}).addTo(map);
+
+const projects = [
+    {
+        title: 'ЖК «Зелёный Берег»',
+        description: 'Современный комплекс у реки с собственным парком',
+        price: 'от 5,2 млн ₽',
+        image: '/images/green-shore.jpg',
+        coords: [55.751244, 37.618423],
+        tags: ['green']
+    },
+    {
+        title: 'ЖК «Эко Хаус»',
+        description: 'Энергоэффективные дома с солнечными панелями',
+        price: 'от 7,8 млн ₽',
+        image: '/images/eco-house.jpg',
+        coords: [55.761244, 37.628423],
+        tags: ['eco']
+    }
+];
+
+projects.forEach(project => {
+    const marker = L.marker(project.coords).addTo(map);
+    marker.bindPopup(`
+     <div style="max-width: 250px; text-align: center;">
+       <strong>${project.title}</strong><br>
+       <em>${project.price}</em><br>
+       <small>${project.description}</small>
+     </div>
+   `);
+});
+
+const ecoIcon = L.divIcon({
+    className: 'custom-marker',
+    html: '<span>🌿</span>',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+});
+
+L.marker([55.741244, 37.608423], { icon: ecoIcon }).addTo(map)
+    .bindPopup("<strong>Новый ЖК ЭкоТаун</strong><br>Скоро появится!");
