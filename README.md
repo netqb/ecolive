@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/90f88ec3-edc3-4823-a1e7-050eefe4a7f0)
+![image](https://github.com/user-attachments/assets/a622680b-1b66-499d-b01c-49284c2d7953)
+![image](https://github.com/user-attachments/assets/5d8b6468-5f9f-4f95-9a64-d6e98750c598)
 
 
 # EcoLive - экологичные квартиры в новостройках
