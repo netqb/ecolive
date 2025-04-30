@@ -1276,3 +1276,191 @@ input[type="range"] {
     padding: 100px 0 60px;
   }
 }
+
+/* === Модальное окно === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show .modal__overlay {
+  opacity: 1;
+}
+
+.modal__content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.modal.show .modal__content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal__close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  color: #000;
+}
+
+.modal__info {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}
+
+.user-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%228%22%20r%3D%225%22%2F%3E%3Cpath%20d%3D%22M20%2021V19C20%2016.7909%2016.4183%2015%2012%2015C7.58172%2015%204%2016.7909%204%2019V21%22%2F%3E%3C%2Fsvg%3E") no-repeat center;
+  background-size: contain;
+}
+
+#callbackForm input[type="text"],
+#callbackForm input[type="tel"],
+#callbackForm button {
+  width: 100%;
+}
+
+.map-section {
+  padding: 60px 0;
+}
+
+.map {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.leaflet-container {
+  font-family: "Manrope", sans-serif;
+}
+
+.custom-marker {
+  background-color: #2E8B57;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === ПРЕЛОАДЕР / Заставка === */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.1s ease;
+}
+
+.preloader-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader-logo {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2E8B57;
+}
+
+.preloader-logo .logo__primary {
+  color: #2E8B57;
+}
+
+.preloader-logo .logo__secondary {
+  color: #333;
+}
+
+/* === Активная ссылка в меню === */
+.nav__link.active,
+.nav__link:hover {
+  color: #2E8B57;
+  font-weight: bold;
+}
+
+.btn--back {
+  display: inline-block;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.project-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.project-image-large {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.project-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.project-info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.project-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
