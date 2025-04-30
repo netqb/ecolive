@@ -22,4 +22,3 @@ v 1.1:
 
 В проекте нет модулей, установить - `npm install`. Поднять через `node server.js`.<br>
 Стэк: scss/css, html, JS, express.js
-<br>
