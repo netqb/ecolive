@@ -72,7 +72,6 @@ function renderProjects(projects) {
       </div>
     `).join('');
 
-    // Обработчики для кнопок
     document.querySelectorAll('.btn-more').forEach(btn => {
         btn.addEventListener('click', function () {
             const details = this.parentElement.querySelector('.project-details');
