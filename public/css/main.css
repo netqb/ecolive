@@ -1464,3 +1464,593 @@ input[type="range"] {
   margin-bottom: 15px;
   line-height: 1.6;
 }
+
+/* Основные стили для страницы объекта */
+.object-page {
+  padding: 100px 0 60px;
+}
+
+.project-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.project-image-large {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-image-large:hover {
+  transform: scale(1.02);
+}
+
+.project-info {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.project-info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1E5A3E;
+}
+
+.project-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.project-info strong {
+  color: #333;
+}
+
+.btn--back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  color: #333;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn--back:hover {
+  background: #2E8B57;
+  color: white;
+}
+
+/* Стили для фильтров квартир */
+.flats-filter {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin: 50px 0;
+  grid-column: 1 / -1;
+}
+
+.flats-filter h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1E5A3E;
+}
+
+.filter-section {
+  margin-bottom: 25px;
+}
+
+.filter-title {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.room-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.room-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  background: white;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.room-btn.active {
+  background: #2E8B57;
+  color: white;
+  border-color: #2E8B57;
+}
+
+.price-slider-container {
+  padding: 0 15px;
+}
+
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#apply-filters {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Стили для списка квартир */
+.flats-results {
+  grid-column: 1 / -1;
+}
+
+.flats-results h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1E5A3E;
+}
+
+.flats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.flat-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.flat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.flat-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.flat-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #2E8B57;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.flat-content {
+  padding: 20px;
+}
+
+.flat-title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.flat-price {
+  color: #2E8B57;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 12px 0;
+}
+
+.flat-params {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.flat-params span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.no-flats {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .project-details {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image-large {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .object-page {
+    padding: 80px 0 40px;
+  }
+
+  .flats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Дополнительные элементы дизайна */
+.card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.card-tag--green {
+  background: #e8f5e9;
+  color: #1E5A3E;
+}
+
+.card-tag--eco {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.card-tag--air {
+  background: #e0f7fa;
+  color: #00838f;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flats-grid {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.flat-card {
+  animation: fadeIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+.flat-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.flat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.flat-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.flat-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* === Форма фильтрации === */
+.flats-filter {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin: 50px 0 30px;
+}
+
+.filter-section {
+  margin-bottom: 25px;
+}
+
+.room-filter .filter-title,
+.price-filter .filter-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.room-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  background: white;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.room-btn.active {
+  background: #2E8B57;
+  color: white;
+  border-color: #2E8B57;
+}
+
+.price-slider-container {
+  padding: 0 15px;
+}
+
+.noUi-target {
+  height: 12px;
+  border-radius: 10px;
+  background: #e0f7fa;
+  box-shadow: none;
+}
+
+.noUi-connects .noUi-connect {
+  background: #2E8B57;
+}
+
+.noUi-handle {
+  border: 1px solid #2E8B57;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.noUi-handle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.3);
+}
+
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#apply-filters {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* === Карточки квартир === */
+.flats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.flat-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.flat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.flat-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.flat-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #2E8B57;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.flat-content {
+  padding: 20px;
+}
+
+.flat-title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.flat-params {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.flat-price {
+  color: #2E8B57;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 12px 0;
+}
+
+/* === Адаптивность карточек === */
+@media (min-width: 992px) {
+  .flats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .flats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .flats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Кнопка "Вернуться в каталог" === */
+.btn--back {
+  display: block;
+  /* Сделать кнопку блочной */
+  width: 100%;
+  /* Растянуть на всю ширину контейнера */
+  margin-top: 30px;
+  /* Отступ сверху */
+  padding: 15px 20px;
+  /* Больше отступов для лучшего вида */
+  background: #f5f5f5;
+  color: #333;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-align: center;
+  /* Выровнять текст по центру */
+}
+
+.btn--back:hover {
+  background: #2E8B57;
+  color: white;
+}
+
+/* Дополнительные стили для фильтров */
+.flats-filter {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 30px 0;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.room-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.room-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  background: white;
+  transition: all 0.3s;
+}
+
+.room-btn.active {
+  background: #2E8B57;
+  color: white;
+  border-color: #2E8B57;
+}
+
+.price-slider {
+  margin: 20px 0;
+  padding: 0 15px;
+}
+
+.flats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.flat-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.flat-card:hover {
+  transform: translateY(-5px);
+}
+
+.flat-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.flat-content {
+  padding: 15px;
+}
+
+.flat-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.flat-price {
+  color: #2E8B57;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.flat-params {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 14px;
+}
+
+.no-flats {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
