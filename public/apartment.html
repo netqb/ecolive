@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Информация о ЖК | EcoLive</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <title>Детали квартиры | EcoLive</title>
+    <link rel="stylesheet" href="/css/main.css" />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
 </head>
 
 <body>
@@ -36,60 +34,48 @@
         </div>
     </header>
 
-    <main class="object-page">
+    <main class="apartment-page">
         <div class="container">
-
-            <!-- Кнопка вернуться -->
-            <a href="/catalog" class="btn btn--secondary btn--back">
-                ◀️ Вернуться в каталог
+            <h1 class="section-title" id="apartment-title">Квартира №101</h1>
+            <a href="#" id="back-to-object-btn" class="btn btn--secondary btn--back">
+                ◀️ Вернуться к ЖК
             </a>
 
-            <!-- Информация о ЖК -->
-            <h1 class="section-title" id="project-title"></h1>
             <div class="project-details">
-                <img src="" alt="" id="project-image" class="project-image-large" />
+                <img src="" alt="План квартиры" id="apartment-image" class="project-image-large" />
+
                 <div class="project-info">
-                    <p id="project-description"></p>
-                    <p><strong>Цена:</strong> <span id="project-price"></span></p>
-                    <p><strong>Особенности:</strong></p>
-                    <div id="project-tags"></div>
-                    <p><strong>Дополнительно:</strong> <span id="project-details-text"></span></p>
-                </div>
-            </div>
-            <div class="flats-filter">
-                <h2>Выберите квартиру</h2>
-
-                <div class="filter-section room-filter">
-                    <label class="filter-title">Количество комнат:</label>
-                    <button class="room-btn active" data-rooms="all">Все</button>
-                    <button class="room-btn" data-rooms="0">Студия</button>
-                    <button class="room-btn" data-rooms="1">1</button>
-                    <button class="room-btn" data-rooms="2">2</button>
-                    <button class="room-btn" data-rooms="3">3</button>
-                    <button class="room-btn" data-rooms="4">4+</button>
-                </div>
-
-                <div class="filter-section price-filter">
-                    <label class="filter-title">Стоимость, млн ₽:</label>
-                    <div class="price-slider-container">
-                        <div id="price-slider"></div>
-                        <div class="price-values">
-                            от <span id="min-price">3</span> до <span id="max-price">15</span> млн ₽
-                        </div>
-                    </div>
-                </div>
-
-                <button id="apply-filters" class="btn btn--primary">Показать квартиры</button>
-            </div>
-
-            <div class="flats-results">
-                <h2>Доступные квартиры</h2>
-                <div class="flats-grid" id="flats-grid">
+                    <p><strong>ЖК:</strong> <span id="apartment-project-name"></span></p>
+                    <p><strong>Комнаты:</strong> <span id="apartment-rooms"></span></p>
+                    <p><strong>Площадь:</strong> <span id="apartment-area"></span> м²</p>
+                    <p><strong>Этаж:</strong> <span id="apartment-floor"></span></p>
+                    <p><strong>Корпус:</strong> <span id="apartment-building"></span></p>
+                    <p><strong>Цена:</strong> <span id="apartment-price"></span> млн ₽</p>
+                    <button class="btn btn--primary"
+                        onclick="document.getElementById('callbackModal').style.display='block'">Оставить
+                        заявку</button>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- Модальное окно -->
+    <div class="modal" id="callbackModal">
+        <div class="modal__overlay" onclick="document.getElementById('callbackModal').style.display='none'"></div>
+        <div class="modal__content">
+            <span class="modal__close"
+                onclick="document.getElementById('callbackModal').style.display='none'">&times;</span>
+            <h2>Заявка на квартиру</h2>
+            <form id="callbackForm">
+                <input type="text" placeholder="Ваше имя" class="form-input" required />
+                <input type="tel" placeholder="Телефон" class="form-input" required />
+                <button type="submit" class="btn btn--primary">Отправить</button>
+                <p class="modal__info">Мы свяжемся с вами в течение 15 минут</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подвал -->
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
@@ -115,14 +101,12 @@
         </div>
     </footer>
 
+    <script src="/js/apartment.js"></script>
     <div id="preloader" class="preloader">
         <div class="preloader-logo">
             <span class="logo__primary">Eco</span><span class="logo__secondary">Live</span>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
-    <script src="js/object.js"></script>
 </body>
 
 </html>
