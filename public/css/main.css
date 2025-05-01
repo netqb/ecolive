@@ -1205,7 +1205,6 @@ input[type="range"] {
   margin-top: 10px;
 }
 
-/* === БЛОК УСЛОВИЙ ИПОТЕКИ === */
 .mortgage-info {
   margin-top: 80px;
   background-color: #f5f5f5;
@@ -1223,7 +1222,6 @@ input[type="range"] {
   gap: 20px;
 }
 
-/* === ЗАЯВКА ВНИЗУ С АКЦЕНТОМ === */
 .cta-special {
   background: linear-gradient(to right, #eafaf1, #eafaf1), url('../images/cta-bg.jpg');
   background-position: center right;
@@ -1277,7 +1275,6 @@ input[type="range"] {
   }
 }
 
-/* === Модальное окно === */
 .modal {
   display: none;
   position: fixed;
@@ -1388,7 +1385,6 @@ input[type="range"] {
   justify-content: center;
 }
 
-/* === ПРЕЛОАДЕР / Заставка === */
 .preloader {
   position: fixed;
   top: 0;
@@ -1422,7 +1418,6 @@ input[type="range"] {
   color: #333;
 }
 
-/* === Активная ссылка в меню === */
 .nav__link.active,
 .nav__link:hover {
   color: #2E8B57;
@@ -1465,7 +1460,6 @@ input[type="range"] {
   line-height: 1.6;
 }
 
-/* Основные стили для страницы объекта */
 .object-page {
   padding: 100px 0 60px;
 }
@@ -1531,7 +1525,6 @@ input[type="range"] {
   color: white;
 }
 
-/* Стили для фильтров квартир */
 .flats-filter {
   background: white;
   padding: 30px;
@@ -1598,7 +1591,6 @@ input[type="range"] {
   margin-top: 20px;
 }
 
-/* Стили для списка квартир */
 .flats-results {
   grid-column: 1 / -1;
 }
@@ -1688,7 +1680,6 @@ input[type="range"] {
   border-radius: 12px;
 }
 
-/* Адаптивность */
 @media (max-width: 992px) {
   .project-details {
     grid-template-columns: 1fr;
@@ -1709,7 +1700,6 @@ input[type="range"] {
   }
 }
 
-/* Дополнительные элементы дизайна */
 .card-tag {
   display: inline-flex;
   align-items: center;
@@ -1737,7 +1727,6 @@ input[type="range"] {
   color: #00838f;
 }
 
-/* Анимации */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1775,7 +1764,6 @@ input[type="range"] {
   animation-delay: 0.4s;
 }
 
-/* === Форма фильтрации === */
 .flats-filter {
   background: white;
   padding: 30px;
@@ -1848,7 +1836,6 @@ input[type="range"] {
   margin-top: 20px;
 }
 
-/* === Карточки квартир === */
 .flats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1915,7 +1902,6 @@ input[type="range"] {
   margin: 12px 0;
 }
 
-/* === Адаптивность карточек === */
 @media (min-width: 992px) {
   .flats-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1934,22 +1920,16 @@ input[type="range"] {
   }
 }
 
-/* === Кнопка "Вернуться в каталог" === */
 .btn--back {
   display: block;
-  /* Сделать кнопку блочной */
   width: 100%;
-  /* Растянуть на всю ширину контейнера */
   margin-top: 30px;
-  /* Отступ сверху */
   padding: 15px 20px;
-  /* Больше отступов для лучшего вида */
   background: #f5f5f5;
   color: #333;
   border-radius: 8px;
   transition: all 0.3s ease;
   text-align: center;
-  /* Выровнять текст по центру */
 }
 
 .btn--back:hover {
@@ -1957,7 +1937,6 @@ input[type="range"] {
   color: white;
 }
 
-/* Дополнительные стили для фильтров */
 .flats-filter {
   background: #f5f5f5;
   padding: 20px;
