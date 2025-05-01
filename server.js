@@ -27,6 +27,10 @@ app.get('/object', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'object.html'));
 });
 
+app.get('/apartment', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'apartment.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Сервер запущен на http://localhost:${PORT}`);
 });
